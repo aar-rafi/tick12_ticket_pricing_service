@@ -9,8 +9,8 @@
 
 ```json
 {
-  "from_station_id": "Dhaka",
-  "to_station_id": "Khulna",
+  "from_station_name": "Dhaka",
+  "to_station_name": "Khulna",
 }
 ```
 
