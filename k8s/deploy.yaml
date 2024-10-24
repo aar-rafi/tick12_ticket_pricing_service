@@ -1,0 +1,38 @@
+# price-service Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tick12-price-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: price
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: price
+    spec:
+      containers:
+        - name: tick12-price-service
+          image: ishrakadit07/tick12_price_service
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8002
+          envFrom:
+            - configMapRef:
+                name: template-config
+            - secretRef:
+                name: postgres-secret
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"

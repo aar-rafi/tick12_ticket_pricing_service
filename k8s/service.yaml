@@ -1,0 +1,13 @@
+# price-service Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: tick12-price-service
+spec:
+  selector:
+    app: price
+  ports:
+    - protocol: TCP
+      port: 8002
+      targetPort: 8002
+  type: ClusterIP
