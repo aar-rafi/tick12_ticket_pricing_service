@@ -1,5 +1,5 @@
 # Auth service Dockerfile
-FROM node:20-alpine
+FROM node:20
 
 WORKDIR /app
 
@@ -8,6 +8,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 8000
+EXPOSE 8002
 
 CMD ["npm", "start"]
