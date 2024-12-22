@@ -3,5 +3,5 @@ import app from "./app.js";
 const PORT = 8002;
 
 app.listen(PORT, (req, res) => {
-  console.log(`auth_service server is running at http://localhost:${PORT}`);
+  console.log(`Pricing service server is running at http://localhost:${PORT}`);
 });
