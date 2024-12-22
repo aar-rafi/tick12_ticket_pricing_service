@@ -1,7 +1,7 @@
 import express from "express";
-import { getTicketPriceByStationIDs } from "../controllers/pricing.controller.js";
+import { getTicketPriceByStationNames } from "../controllers/pricing.controller";
 const router = express.Router();
 
-router.post("/stationids", getTicketPriceByStationIDs);
+router.post("/stationnames", getTicketPriceByStationNames);
 
 export default router;
